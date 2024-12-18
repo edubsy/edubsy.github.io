@@ -1,0 +1,33 @@
+{
+    "id": "my-pwa",
+    "name": "Ma première PWA",
+    "short_name": "Ma PWA",
+    "description": "Une simple PWA pour débuter",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3367D6",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [    
+        {
+            "src": "image1.gif",
+             "sizes": "640x320",
+             "type": "image/gif",
+             "form_factor": "wide",
+             "label": "Application"
+           },
+           {
+            "src": "image2.gif",
+             "sizes": "320x640",
+             "type": "image/gif",
+             "form_factor": "narrow",
+             "label": "Application"
+           }
+ ]
+}
