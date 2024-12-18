@@ -3,7 +3,7 @@
     "name": "Ma première PWA",
     "short_name": "Ma PWA",
     "description": "Une simple PWA pour débuter",
-    "start_url": "/",
+    "start_url": "/v1/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#3367D6",
