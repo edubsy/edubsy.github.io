@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#42474f",
+              "surface": "#f9f9f9",
+              "on-secondary": "#ffffff",
+              "outline": "#727780",
+              "surface-dim": "#dadada",
+              "secondary-fixed": "#cbe7f5",
+              "on-primary-fixed-variant": "#09497a",
+              "secondary": "#48626e",
+              "on-surface": "#1a1c1c",
+              "on-tertiary-container": "#d5e2ea",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#021f29",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#59656c",
+              "primary-fixed": "#d1e4ff",
+              "inverse-on-surface": "#f1f1f1",
+              "tertiary": "#414d54",
+              "surface-bright": "#f9f9f9",
+              "on-tertiary-fixed-variant": "#3c494f",
+              "secondary-fixed-dim": "#afcbd8",
+              "surface-tint": "#2d6194",
+              "primary": "#134e7f",
+              "surface-container": "#eeeeee",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#cde2ff",
+              "inverse-surface": "#2f3131",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#9ecaff",
+              "outline-variant": "#c2c7d0",
+              "on-background": "#1a1c1c",
+              "tertiary-fixed": "#d7e4ec",
+              "inverse-primary": "#9ecaff",
+              "surface-container-low": "#f3f3f3",
+              "surface-container-high": "#e8e8e8",
+              "surface-variant": "#e2e2e2",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#304a55",
+              "on-primary-fixed": "#001d36",
+              "on-secondary-container": "#4e6874",
+              "on-tertiary-fixed": "#111d23",
+              "background": "#f9f9f9",
+              "tertiary-fixed-dim": "#bbc8d0",
+              "error": "#ba1a1a",
+              "secondary-container": "#cbe7f5",
+              "surface-container-highest": "#e2e2e2",
+              "primary-container": "#336699"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Noto Serif"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-link {
+            border-bottom: 2px solid #134e7f;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-xl font-extrabold tracking-tighter text-sky-900 dark:text-sky-100 font-headline"></div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-700 dark:hover:text-sky-300 transition-colors font-headline" href="#expertise">Expertise</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-700 dark:hover:text-sky-300 transition-colors font-headline"href="#projects">Projects</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-700 dark:hover:text-sky-300 transition-colors font-headline" href="#parcours">Parcours</a>
+<a href="mailto:n.dubois.formation@gmail.com" class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-headline font-bold text-sm hover:opacity-90 transition-all shadow-md active:scale-95">Contact</a>
+</div>
+<button id="nav-burger" class="md:hidden p-2 rounded-lg text-slate-500 hover:text-primary transition-colors" aria-label="Menu">
+  <span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div id="nav-mobile" class="hidden md:hidden bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-t border-slate-200/50 dark:border-slate-800/50">
+  <div class="flex flex-col px-6 py-4 gap-1">
+    <a class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary transition-colors font-headline py-3 border-b border-slate-100" href="#expertise" onclick="document.getElementById('nav-mobile').classList.add('hidden')">Expertise</a>
+    <a class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary transition-colors font-headline py-3 border-b border-slate-100" href="#projects" onclick="document.getElementById('nav-mobile').classList.add('hidden')">Projets</a>
+    <a class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary transition-colors font-headline py-3 border-b border-slate-100" href="#parcours" onclick="document.getElementById('nav-mobile').classList.add('hidden')">Parcours</a>
+    <a href="mailto:n.dubois.formation@gmail.com" class="mt-2 bg-primary text-on-primary px-6 py-2.5 rounded-xl font-headline font-bold text-sm hover:opacity-90 transition-all shadow-md text-center">Contact</a>
+  </div>
+</div>
+<script>
+  document.getElementById('nav-burger').addEventListener('click', function() {
+    document.getElementById('nav-mobile').classList.toggle('hidden');
+  });
+</script>
+</nav>
+<main class="pt-32 pb-20 max-w-7xl mx-auto px-6">
+<!-- Hero Section -->
+<section class="mb-24">
+<div class="grid grid-cols-12 gap-12 items-center">
+<div class="col-span-12 md:col-span-3 relative group max-w-xs mx-auto w-full md:max-w-none">
+<div class="absolute -inset-4 bg-primary/5 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
+<img alt="Nicolas Dubois" class="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl  grayscale-0 border-4 border-surface-container-lowest" data-alt="professional portrait of a senior male developer in his 40s wearing a navy blazer in a high-end architectural studio setting" src="avatar.jpg"/>
+<a href="Portfolio.pdf" target="_blank" class="relative z-10 mt-4 flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-primary text-on-primary font-headline font-bold text-sm hover:opacity-90 transition-all shadow-md active:scale-95">
+  <span class="material-symbols-outlined text-base">download</span>
+  Télécharger le portfolio
+</a>
+</div>
+<div class="col-span-12 md:col-span-9">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-xs font-bold tracking-widest mb-6 uppercase">23 ANS D'EXPERTISE TECHNIQUE</span>
+<h1 class="font-headline text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter text-primary mb-2">Nicolas Dubois</h1>
+<h2 class="font-headline text-xl md:text-3xl font-light text-secondary mb-8">Ingénieur développement web et mobile</h2>
+<div class="flex flex-wrap gap-6 items-center">
+<div class="flex items-center gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="location_on">location_on</span>
+<span class="font-label text-sm text-on-surface-variant">Cahors, France</span>
+</div>
+<div class="flex items-center gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="mail">mail</span>
+<span class="font-label text-sm text-on-surface-variant">n.dubois.formation@gmail.com</span>
+</div>
+<div class="flex items-center gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="phone">phone</span>
+<span class="font-label text-sm text-on-surface-variant">06 06 45 23 47</span>
+</div>
+<div class="flex items-center gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="language">language</span>
+<span class="font-label text-sm text-on-surface-variant">edubsy.github.io</span>
+</div>
+<div class="flex items-center gap-2 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="share">share</span>
+<a href="https://www.linkedin.com/in/nicolas-dubois-96a269247" target="_blank" rel="noopener noreferrer" class="font-label text-sm text-on-surface-variant hover:text-sky-600 transition-colors">LinkedIn</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Layout -->
+<div class="grid grid-cols-12 gap-16">
+<!-- Left Column: Skills & Education -->
+<aside class="col-span-12 md:col-span-4 space-y-16">
+<!-- Technical Skills -->
+<section>
+<h3 class="font-headline text-sm font-black uppercase tracking-widest text-primary/50 mb-8 flex items-center gap-4">
+                        Compétences <span class="h-px flex-1 bg-outline-variant/30"></span>
+</h3>
+<div class="space-y-8">
+<div>
+<p class="font-headline font-bold text-xs uppercase tracking-tighter text-secondary mb-4">Développement Mobile</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Flutter</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Kotlin</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Swift</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Android</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">iOS</span>
+</div>
+</div>
+<div>
+<p class="font-headline font-bold text-xs uppercase tracking-tighter text-secondary mb-4">Développement Web</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">WordPress</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">PHP</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">HTML/CSS</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">JavaScript</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Shopify</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Liquid</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">SEO</span>
+</div>
+</div>
+<div>
+<p class="font-headline font-bold text-xs uppercase tracking-tighter text-secondary mb-4">Backend &amp; API</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Laravel</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Symfony</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Node.JS</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">SQL</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Python</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Ruby</span>
+</div>
+</div>
+<div>
+<p class="font-headline font-bold text-xs uppercase tracking-tighter text-secondary mb-4">Électronique embarquée</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">C++</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">ESP32</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Électronique</span>
+</div>
+</div>
+<div>
+<p class="font-headline font-bold text-xs uppercase tracking-tighter text-secondary mb-4">Formation</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Java</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">J2EE</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">PHP</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">HTML/CSS</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">JavaScript</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">WordPress</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Laravel</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label hover:bg-primary-fixed transition-colors">Flutter</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Languages -->
+<section>
+<h3 class="font-headline text-sm font-black uppercase tracking-widest text-primary/50 mb-8 flex items-center gap-4">
+                        Langues <span class="h-px flex-1 bg-outline-variant/30"></span>
+</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body italic text-on-surface">Français</span>
+<span class="font-label text-[10px] uppercase font-bold tracking-widest text-primary"></span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body italic text-on-surface">Anglais</span>
+<span class="font-label text-[10px] uppercase font-bold tracking-widest text-primary"></span>
+</div>
+</div>
+</section>
+<!-- Academic Formation -->
+<section>
+<h3 class="font-headline text-sm font-black uppercase tracking-widest text-primary/50 mb-8 flex items-center gap-4">
+                        Formation <span class="h-px flex-1 bg-outline-variant/30"></span>
+</h3>
+<div class="space-y-8">
+<div class="group">
+<p class="font-label text-[10px] text-primary font-bold tracking-widest mb-1">1998 — 2001</p>
+<h4 class="font-headline font-bold text-sm text-on-surface mb-1">Diplôme d'ingénieur Informatique</h4>
+<p class="font-body text-sm text-on-surface-variant italic leading-relaxed">ENSISA — École Nationale Supérieure d'Ingénieurs Sud Alsace</p>
+</div>
+<div class="group">
+<p class="font-label text-[10px] text-primary font-bold tracking-widest mb-1">1996 — 1998</p>
+<h4 class="font-headline font-bold text-sm text-on-surface mb-1">DUT Génie Électrique et Informatique Industrielle</h4>
+<p class="font-body text-sm text-on-surface-variant italic leading-relaxed">IUT GEII de Mulhouse</p>
+</div>
+</div>
+</section>
+</aside>
+<!-- Right Column: Expertise & Experience -->
+<div class="col-span-12 md:col-span-8 space-y-24">
+<!-- Expertise Systemes -->
+<section id="expertise">
+<h3 class="font-headline text-sm font-black uppercase tracking-widest text-primary/50 mb-12 flex items-center gap-4">Expertise Systèmes <span class="h-px flex-1 bg-outline-variant/30"></span>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<h4 class="font-headline font-bold text-lg text-primary mb-4">Création de sites internet</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Site de présentation, de prise de rendez-vous, e-commerce ou développement de modules spécifiques adaptés à vos besoins.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-secondary">
+<h4 class="font-headline font-bold text-lg text-primary mb-4">Applications mobiles</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Réalisation d'applications mobiles Google Android et Apple iOS avec Flutter, Kotlin et Swift.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-primary-container">
+<h4 class="font-headline font-bold text-lg text-primary mb-4">Logiciels métier</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Développement de logiciels sur mesure adaptés à votre métier, incluant des modules pour logiciels 3D (SketchUp).</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-secondary">
+<h4 class="font-headline font-bold text-lg text-primary mb-4">Conseil &amp; Formation</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Conseils en référencement (SEO) et sécurité, formations en développement web et mobile pour particuliers et entreprises.</p>
+</div>
+</div>
+</section>
+<!-- Projets -->
+<section id="projects">
+<h3 class="font-headline text-sm font-black uppercase tracking-widest text-primary/50 mb-12 flex items-center gap-4">Projets <span class="h-px flex-1 bg-outline-variant/30"></span>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="p-8 bg-surface-container-low rounded-xl flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-xs font-label font-bold">Freelance</span>
+<span class="font-label text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">2012 — Aujourd'hui</span>
+</div>
+<h4 class="font-headline font-bold text-lg text-on-surface">Sites e-commerce WordPress</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed flex-1">Création de sites WordPress dans le domaine de l'e-commerce, développement de plugins spécifiques, intégration HTML/CSS et optimisation SEO.</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">WordPress</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">PHP</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">HTML/CSS</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">SEO</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="p-8 bg-surface-container-low rounded-xl flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label font-bold">Freelance</span>
+<span class="font-label text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">2012 — Aujourd'hui</span>
+</div>
+<h4 class="font-headline font-bold text-lg text-on-surface">Applications mobiles Android &amp; iOS</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed flex-1">Développement d'applications mobiles avec Flutter pour la santé et le transport, et avec Kotlin/Swift pour la localisation de vendeurs.</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">Flutter</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">Kotlin</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">Swift</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="p-8 bg-surface-container-low rounded-xl flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-xs font-label font-bold">Freelance</span>
+<span class="font-label text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">2012 — Aujourd'hui</span>
+</div>
+<h4 class="font-headline font-bold text-lg text-on-surface">API mobiles — Laravel &amp; Node.JS</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed flex-1">Développement d'API back-end sur Laravel et Node.JS pour l'interconnexion avec des applications mobiles, incluant migration et gestion de données SQL.</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">Laravel</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">Node.JS</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">SQL</span>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="p-8 bg-surface-container-low rounded-xl flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label font-bold">Freelance</span>
+<span class="font-label text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">2012 — Aujourd'hui</span>
+</div>
+<h4 class="font-headline font-bold text-lg text-on-surface">Plugins SketchUp 3D</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed flex-1">Création de plugins SketchUp 3D en Python et Ruby</p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">Python</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">Ruby</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-label">IA</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Parcours Professionnel -->
+<section id="parcours">
+<h3 class="font-headline text-sm font-black uppercase tracking-widest text-primary/50 mb-12 flex items-center gap-4">Parcours Professionnel <span class="h-px flex-1 bg-outline-variant/30"></span>
+</h3>
+<div class="space-y-16">
+<!-- Exp 1 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-fixed-dim rounded-full"></div>
+<div class="absolute left-[-6px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-surface"></div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+<div>
+<h4 class="font-headline font-extrabold text-2xl text-on-surface">Ingénieur développement web et applications mobiles</h4>
+<p class="font-headline font-bold text-primary">Freelance</p>
+</div>
+<span class="font-label text-xs font-bold text-on-surface-variant bg-surface-variant px-3 py-1 rounded-full">2012 — Aujourd'hui</span>
+</div>
+<ul class="font-body text-on-surface-variant space-y-4 text-base leading-relaxed max-w-2xl">
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Création de sites WordPress dans le domaine de l'e-commerce et développement de plugins spécifiques.</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Intégration d'éléments graphiques HTML et CSS, migration de données SQL, optimisation SEO.</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Création d'applications mobiles Android et iOS avec Flutter (santé, transport) et Kotlin/Swift (localisation de vendeurs).</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Développement d'API sur Laravel et Node.JS pour interconnexion avec des applications mobiles.</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Création de plugins SketchUp 3D en Python et Ruby.</li><li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Création de sites e-commerce Shopify avec personnalisation des templates Liquid et ajout de fonctionnalités avancées en JavaScript.</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Développement d'un 'logiciel métier avec Symfony 8 : développement de nouvelles fonctionnalités et optimisation des performances.</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Conception d'une carte électronique et programmation C++ sur microcontrôleur ESP32.</li></ul>
+</div>
+<!-- Exp 2 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-fixed-dim/60 rounded-full"></div>
+<div class="absolute left-[-6px] top-0 w-4 h-4 rounded-full bg-secondary ring-4 ring-surface"></div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+<div>
+<h4 class="font-headline font-extrabold text-2xl text-on-surface">Formateur — Développement informatique</h4>
+<p class="font-headline font-bold text-primary">GRETA · ADRAR Formation · CCI Normandie · CESI</p>
+</div>
+<span class="font-label text-xs font-bold text-on-surface-variant bg-surface-variant px-3 py-1 rounded-full">2012 — Aujourd'hui</span>
+</div>
+<ul class="font-body text-on-surface-variant space-y-4 text-base leading-relaxed max-w-2xl">
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Formation développement web (GRETA, Cahors) et Java / WordPress (ADRAR Formation, Toulouse).</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Formation Java à la CCI Normandie (Le Havre) et programmation avancée Java au CESI (Mont-Saint-Aignan).</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Enseignement de HTML, CSS, Java, J2EE, PHP, Python, WordPress et Laravel.</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Accompagnement des élèves sur des projets professionnels.</li>
+</ul>
+</div>
+<!-- Exp 3 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-fixed-dim/40 rounded-full"></div>
+<div class="absolute left-[-6px] top-0 w-4 h-4 rounded-full bg-outline ring-4 ring-surface"></div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+<div>
+<h4 class="font-headline font-extrabold text-2xl text-on-surface">Assistant de direction</h4>
+<p class="font-headline font-bold text-primary">CCB</p>
+</div>
+<span class="font-label text-xs font-bold text-on-surface-variant bg-surface-variant px-3 py-1 rounded-full">2007 — 2012</span>
+</div>
+<ul class="font-body text-on-surface-variant space-y-4 text-base leading-relaxed max-w-2xl">
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Étude, conception et réalisation d'outils informatiques pour une équipe de secrétaires dans le domaine de la construction.</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Formation et suivi personnalisé des utilisateurs.</li>
+</ul>
+</div>
+<!-- Exp 4 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-fixed-dim/20 rounded-full"></div>
+<div class="absolute left-[-6px] top-0 w-4 h-4 rounded-full bg-outline-variant ring-4 ring-surface"></div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+<div>
+<h4 class="font-headline font-extrabold text-2xl text-on-surface">Ingénieur logiciel</h4>
+<p class="font-headline font-bold text-primary">Getronics</p>
+</div>
+<span class="font-label text-xs font-bold text-on-surface-variant bg-surface-variant px-3 py-1 rounded-full">2001 — 2007</span>
+</div>
+<ul class="font-body text-on-surface-variant space-y-4 text-base leading-relaxed max-w-2xl">
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Développement d'un framework JavaScript.</li>
+<li class="flex gap-3"><span class="text-primary mt-1.5">•</span> Création de sites web à base de CMS (Typo3, Spip, MCMS) et de portails (SharePoint, BEA) pour BNP, Coface, etc.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer / CTA -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full border-t border-slate-200/50 dark:border-slate-800/50">
+<div class="flex flex-col md:flex-row justify-between items-center py-24 px-8 max-w-7xl mx-auto gap-12">
+<div class="text-center md:text-left">
+<h3 class="font-headline font-black text-2xl md:text-4xl text-primary mb-4 tracking-tighter">Prêt pour un nouveau projet ?</h3>
+<p class="font-body text-lg italic text-slate-500 max-w-md mx-auto md:mx-0">Un projet web, mobile ou embarqué ? Contactez-moi et parlons-en.</p>
+</div>
+<div class="flex flex-col items-center gap-6">
+<a href="mailto:n.dubois.formation@gmail.com" class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 md:px-12 py-4 md:py-5 rounded-xl font-headline font-extrabold text-base md:text-lg shadow-xl hover:shadow-2xl transition-all active:scale-95 group flex items-center gap-3">Me contacter
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<div class="flex gap-4">
+<button onclick="(function(btn){var icon=btn.querySelector('.material-symbols-outlined');navigator.clipboard.writeText(window.location.href).then(function(){icon.textContent='check';btn.classList.add('bg-primary-fixed');setTimeout(function(){icon.textContent='share';btn.classList.remove('bg-primary-fixed');},2000);})})(this)" class="p-3 bg-surface-container-lowest rounded-full text-primary hover:bg-primary-fixed transition-colors shadow-sm cursor-pointer" title="Copier le lien">
+  <span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+
+</div>
+</div>
+</div>
+  <div class="border-t border-slate-200/50 dark:border-slate-800/50 py-8">
+    <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <span class="font-headline font-black text-lg text-sky-900 dark:text-sky-100 text-center md:text-left">Nicolas Dubois</span>
+      <p class="font-body text-sm italic text-slate-500 text-center">© 2026 Nicolas Dubois — Tous droits réservés</p>
+      <div class="flex gap-6">
+        <a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors font-body text-sm italic underline-offset-4 hover:underline" href="mentions-legales.html">Mentions légales</a>
+        <a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors font-body text-sm italic underline-offset-4 hover:underline" href="https://www.linkedin.com/in/nicolas-dubois-96a269247" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>
